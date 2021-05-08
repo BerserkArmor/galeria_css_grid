@@ -1,0 +1,123 @@
+:root{
+    /*IMAGENES DE FONDO PARA LOS ELEMENTOS*/
+    --image1:url("../img/mj1.jpg");
+    --image2:url("../img/mj2.jpg");
+    --image3:url("../img/mj3.jpg");
+    --image4:url("../img/mj4.jpg");
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(400deg, #FFFFFF,  #1C3F80);
+}
+
+.container{
+    outline: 2px solid #333;
+    width: 90%;
+    /* max-width: 600px; */
+    min-width: auto;
+    height: 200vh;
+    margin: 50px auto;
+    display: grid;
+    background-color:#333;
+    /*align-items: stretch; | esta propiedad es la por defecto de GRID 
+    haciendo que los elementos se estiren verticalmente ocuapndo todo el espacio*/
+    /*align-items: center; | esta propiedad centra los elementos verticalmente*/
+    /* grid-auto-flow: column; | esta propiedad organiza los elementos como columnas */
+    /*justify-items: center; |esta propiedad centra los elmentos horizontalmente*/
+    /*Estas propiedades estableces el tamaño a ocupar de los elementos en % dentro del container
+    grid-template-columns: 20%  50% 30% ;
+    grid-template-rows: 70% 30% ; */
+    /* grid-template-columns: repeat(4,25%) ; */
+
+    /*Fr(fraccion) es una unidad de medida unica de GRID y permite diviri la grid en fracciones
+    haciendola flexible
+     grid-template-columns: 1fr 2fr ; */
+    /*Repeat es una funcion que nos permite agregar como primer parametro la cantidad de filas
+    o columnas y de segundo parametro recibe al tamaño de espacio a ocupar (fr,px,%,etc)
+     grid-template-columns: repeat(2, 1fr);  */
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(8, 1fr);
+    /*Esta propiedad añande un espacio de 20 px entre filas 
+     row-gap: 20px; */
+     /*Esta propiedad añade un espacio de 20pc entre columnas 
+     column-gap: 20px; */
+
+    /*Esta propiedad es un shorthand de css grid que agrega el mismo espacio de 20px en filas y columnas 
+    gap:20px; */
+    gap: 5px;
+    /*Grid template areas es una propiedad solo para el container del GRID
+    y permite nombras las areas  de la cuadricula GRID 
+    grid-template-areas:
+    //las filas se representan con comillas dobles y 
+    //dentro la cantidad de columnas por elemento
+    "elemento1 elemento1 elemento2"
+    "elemento3 elemento3 elemento2"
+    "elemento3 elemento3 elemento2"
+    "elemento4 elemento4 elemento4" ; */
+    grid-template-areas:
+    "elemento1 elemento1 elemento3 elemento3"
+    "elemento1 elemento1 elemento3 elemento3"
+    "elemento2 elemento2 elemento3 elemento3"
+    "elemento2 elemento2 elemento3 elemento3"
+    "elemento2 elemento2 elemento3 elemento3"
+    "elemento4 elemento4 elemento4 elemento4"
+    "elemento4 elemento4 elemento4 elemento4"
+    "elemento4 elemento4 elemento4 elemento4";
+
+}
+
+.element{
+    font-size: 2rem;
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+
+}
+.element1{
+background-color: crimson;
+background-image: var(--image1);
+/*grid-row y column permite posicionar un elemento en grid en base a sus lineas 
+grid-column: linea_de_inicio/linea_final;
+grid-row: linea_de_inicio/linea_final; */
+/* grid-column: 1/3;
+grid-row  : 1/2; */
+/*Grid-area asigna la posicion del elemento en base a las areas definidas en el
+container, como se ve el elemento 1 esta ocupando el nombre de area elemento1
+definido en la clase container.
+grid-area: elemento1; */
+grid-area: elemento1;
+
+}
+.element2{
+background-color: dodgerblue;
+background-image: var(--image2);
+/* grid-column:3/4 ;
+grid-row: 1/4; */
+
+grid-area: elemento2;
+
+}
+.element3{
+background-color: coral;
+background-image: var(--image3);
+/* grid-column: 1/3 ;
+grid-row: 2/4;  */
+grid-area: elemento3;
+
+}
+.element4{
+background-color: darkslateblue;
+background-image: var(--image4);
+/* grid-column: 1/-1 ;
+grid-row: 4/5 ; */
+grid-area: elemento4;
+
+}
